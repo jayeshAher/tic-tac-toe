@@ -1,91 +1,69 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-    margin: 20px;
-    padding: 0;
-  }
-  
-  h1 {
-    margin-top: 0;
-    font-size: 22px;
-  }
-  
-  h2 {
-    margin-top: 0;
-    font-size: 20px;
-  }
-  
-  h3 {
-    margin-top: 0;
-    font-size: 18px;
-  }
-  
-  h4 {
-    margin-top: 0;
-    font-size: 16px;
-  }
-  
-  h5 {
-    margin-top: 0;
-    font-size: 14px;
-  }
-  
-  h6 {
-    margin-top: 0;
-    font-size: 12px;
-  }
-  
-  code {
-    font-size: 1.2em;
-  }
-  
-  ul {
-    padding-inline-start: 20px;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-    margin: 20px;
-    padding: 0;
-  }
-  
-  .square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-  }
-  
-  .board-row:after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 10px;
-  }
-  .game {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .game-info {
-    margin-left: 20px;
-  }
-  
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.square {
+  background: #fff;
+  border: 2px solid #00897b;
+  float: left;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 80px;
+  height: 80px;
+  margin-right: -2px;
+  margin-top: -2px;
+  padding: 0;
+  text-align: center;
+  width: 80px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.square:hover {
+  background: #e0f2f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #424242;
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-board {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  padding: 20px;
+  margin: 0 auto;
+  border: 2px solid #00897b;
+}
+
+.game-info {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+  color: #757575;
+  text-align: center;
+}
