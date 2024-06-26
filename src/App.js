@@ -22,14 +22,24 @@ function Board({ xIsNext, squares, onPlay }) {
     onPlay(nextsquares);
   }
 
+  const allSquaresOccupied = (squares) => {
+    for (let i = 0; i < squares.length; i++) {
+      if (squares[i] === null) {
+        return false;
+      }
+    }
+    return true;
+  };
+
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
     status = "Winner: " + winner;
+  } else if (allSquaresOccupied(squares) && !winner) {
+    status = "Draw";
   } else {
     status = "Next Player: " + (xIsNext ? "X" : "O");
   }
-
 
   function calculateWinner(squares) {
     const lines = [
