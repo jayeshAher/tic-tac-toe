@@ -62,8 +62,23 @@ body {
 
 .game-info {
   margin-top: 20px;
-  margin-left: 20px;
   font-size: 20px;
   color: #757575;
   text-align: center;
+}
+
+.toggle {
+  height: 40px;
+  width: 60px;
+  margin: 15px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  background: #fff;
+  border: 2px solid #00897b;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background: #e0f2f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }

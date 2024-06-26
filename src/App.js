@@ -79,23 +79,9 @@ export default function Game() {
     setCurrentMove(nextHistory.length - 1);
   }
 
-  function jumpTo(nextMove) {
-    setCurrentMove(nextMove);
+  function jumpTo(move) {
+    setCurrentMove(move);
   }
-
-  const moves = history.map((squares, move) => {
-    let description;
-    if (move > 0) {
-      description = "Go to move #" + move;
-    } else {
-      description = "Go to game start";
-    }
-    return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
-      </li>
-    );
-  });
 
   return (
     <>
@@ -105,10 +91,16 @@ export default function Game() {
         </div>
         <div className="game-info">
           You're at move #{currentMove}
-          <ol>{moves}</ol>
+        </div>
+        <div className="toggles">
+          <button className="toggle" onClick={() => jumpTo(currentMove === 0 ? 0 : currentMove - 1)}>
+            Prev
+          </button>
+          <button className="toggle" onClick={() => jumpTo(currentMove === history.length - 1 ? history.length - 1 : currentMove + 1)}>
+            Next
+          </button>
         </div>
       </div>
     </>
   )
 }
-
