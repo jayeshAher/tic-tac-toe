@@ -26,7 +26,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
     const winner = calculateWinner(squares);
     let status;
     if (winner) {
-      status = "Winner: " + winner;
+      status = "Winner: " + winner[0];
     } else if (allSquaresOccupied(squares) && !winner) {
       status = "Draw";
     } else {
@@ -43,7 +43,7 @@ export default function Board({ xIsNext, squares, onPlay }) {
       for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-          return squares[a];
+          return [squares[a], [a, b, c]];
         }
       }
       return null;
@@ -58,7 +58,12 @@ export default function Board({ xIsNext, squares, onPlay }) {
               {[...Array(3)].map((_, colIndex) => {
                 const index = rowIndex * 3 + colIndex;
                 if (index < squares.length) {
-                  return <Square key={index} value={squares[index]} onSquareClick={() => handleClick(index)} />
+                  return <Square 
+                    key={index} 
+                    value={squares[index]} 
+                    onSquareClick={() => handleClick(index)} 
+                    isWinning={winner ? ((index === winner[1][0] || index === winner[1][1] || index === winner[1][2]) ? true : false) : false} 
+                    />
                 }
                 return null;
               })}
