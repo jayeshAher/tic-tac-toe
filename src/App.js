@@ -17,6 +17,11 @@ export default function Game() {
     setCurrentMove(move);
   }
 
+  function handleReset() {
+    setHistory([Array(9).fill(null)]);
+    setCurrentMove(0);
+  }
+
   return (
     <>
       <div className="game">
@@ -30,6 +35,7 @@ export default function Game() {
           <button className="toggle" onClick={() => jumpTo(currentMove === 0 ? 0 : currentMove - 1)}>
             Prev
           </button>
+          <button className="toggle" onClick={handleReset}>Reset</button>
           <button className="toggle" onClick={() => jumpTo(currentMove === history.length - 1 ? history.length - 1 : currentMove + 1)}>
             Next
           </button>
