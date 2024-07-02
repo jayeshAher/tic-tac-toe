@@ -48,12 +48,6 @@ body {
   transition: background 0.3s, box-shadow 0.3s;
 }
 
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
-}
-
 .status {
   margin-bottom: 20px;
   font-size: 24px;
