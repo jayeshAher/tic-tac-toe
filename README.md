@@ -9,7 +9,7 @@ A simple, interactive Tic-Tac-Toe game built with React. This app allows users t
 - [How to Play](#how-to-play)
 
 ## Demo
-Check out the live demo of the app here: [Tic-Tac-Toe](https://jayeshaher.github.io/tic-tac-toe/)
+Check out the live demo of the app here: <a href="https://jayeshaher.github.io/tic-tac-toe/" target="_blank">Tic-Tac-Toe</a>
 
 ## Features
 - Play Tic-Tac-Toe against another player
