@@ -24,23 +24,40 @@ export default function Game() {
 
   return (
     <>
+      <div className="title">Tic Tac Toe</div>
       <div className="game">
         <div className="game-board">
-          <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+          <Board
+            xIsNext={xIsNext}
+            squares={currentSquares}
+            onPlay={handlePlay}
+          />
         </div>
-        <div className="game-info">
-          You're at move #{currentMove}
-        </div>
+        <div className="game-info">You're at move #{currentMove}</div>
         <div className="toggles">
-          <button className="toggle" onClick={() => jumpTo(currentMove === 0 ? 0 : currentMove - 1)}>
+          <button
+            className="toggle"
+            onClick={() => jumpTo(currentMove === 0 ? 0 : currentMove - 1)}
+          >
             Prev
           </button>
-          <button className="toggle" onClick={handleReset}>Reset</button>
-          <button className="toggle" onClick={() => jumpTo(currentMove === history.length - 1 ? history.length - 1 : currentMove + 1)}>
+          <button className="toggle" onClick={handleReset}>
+            Reset
+          </button>
+          <button
+            className="toggle"
+            onClick={() =>
+              jumpTo(
+                currentMove === history.length - 1
+                  ? history.length - 1
+                  : currentMove + 1
+              )
+            }
+          >
             Next
           </button>
         </div>
       </div>
     </>
-  )
+  );
 }

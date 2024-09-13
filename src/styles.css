@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #f5f5dc;
@@ -7,6 +7,16 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #111;
 }
 
 .square {
@@ -82,12 +92,12 @@ body {
   height: 40px;
   width: 60px;
   margin: 15px;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   background: #fff;
   border: 2px solid #00897b;
   cursor: pointer;
-  border-radius: 10px;;
+  border-radius: 10px;
 }
 
 .toggle:hover {
